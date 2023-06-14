@@ -1,6 +1,6 @@
 .equipment {
     @include adaptiveClamp(padding-top, 67, 23);
-    @include adaptiveClamp(padding-bottom, 100, 57);
+    @include adaptiveClamp(padding-bottom, 100, 30);
     &__container {
     }
 
@@ -51,7 +51,7 @@
 
     &__button {
         margin: 0 auto;
-        @include adaptiveClamp(max-width, 355, 200);
+        @include adaptiveClamp(max-width, 355, 210);
     }
 }
 .blue {
