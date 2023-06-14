@@ -1,15 +1,125 @@
 .footer {
+  
   padding: rem(20) 0;
-  background: $blackColor;
+  @include adaptiveClamp(padding-top, 50, 30);
+  @include adaptiveClamp(padding-bottom, 165, 95);
+  background: rgba(7, 237, 252, 0.29);
 
   // .footer__container
-  &__container {
-    display: flex;
-    align-items: center;
 
-    @include media(510) {
-      flex-direction: column;
-      align-items: flex-start;
+  &__container {
+    @media(max-width:1550px){
+        padding: 0 rem(10);
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+      &:last-child {
+        @media(max-width:920px){
+          display: none;
+      }
+    }
+  }
+
+  &__email {
+    font-weight: 500;
+    margin-bottom: rem(4);
+    @include adaptiveClamp(font-size, 15, 10);
+    @include adaptiveClamp(line-height, 18, 12);  
+    a {
+      font-weight: 400;
+      text-decoration: underline;
+    }
+  }
+
+  &__location {
+    @include adaptiveClamp(font-size, 15, 10);
+    @include adaptiveClamp(line-height, 18, 12);  
+    margin-bottom: rem(60);
+    @include adaptiveClamp(margin-bottom, 60, 11);
+  }
+
+  &__logo {
+    @include adaptiveClamp(font-size, 15, 10);
+    @include adaptiveClamp(line-height, 18, 12);  
+  }
+
+  &__phone {
+    margin-bottom: rem(16);
+    @include adaptiveClamp(margin-bottom, 16, 8);
+    a {
+      @include adaptiveClamp(font-size, 25, 15);
+      font-weight: 500;
+    }
+    @media(max-width:510px){
+        text-align: center;
+    }
+  }
+
+  &__messenger-row {
+    display: flex;
+    padding-left: rem(60);
+    @include adaptiveClamp(gap, 15, 10);
+    @media(max-width:510px){
+        padding-left: rem(80);
+    }
+  }
+
+  &__messenger {
+    @include adaptiveClamp(max-width, 30, 21);
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__button-row {
+
+    min-width: rem(196);
+    
+  }
+
+  &__button {
+    @include adaptiveClamp(font-size, 18, 18);
+    padding: rem(16);
+  }
+}
+.button {
+}
+.assistant {
+  position: fixed;
+  bottom: rem(5);
+  right: rem(5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  background: #000000;
+  border-radius: 0px 40px 0px 0px;
+  @include adaptiveClamp(max-width, 380, 207);
+  @include adaptiveClamp(padding, 22, 10);
+  display: flex;
+  align-items: center;
+  &__text {
+    position: relative;
+    @include adaptiveClamp(font-size, 20, 10);
+    font-weight: 600;
+    color: $whiteColor;
+    @include adaptiveClamp(padding-left, 39, 26);
+    &::before {
+        position: absolute;
+        content: '';
+        @include adaptiveClamp(width, 27, 21);
+        @include adaptiveClamp(height, 27, 21);
+        background: url(@img/assistant-messeg.svg) no-repeat center center / contain;
+        bottom: rem(-4);
+        left: 0;
+        @media(max-width:500px){
+          bottom: rem(-5);
+        }
     }
   }
 }
