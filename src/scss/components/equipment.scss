@@ -1,0 +1,58 @@
+.equipment {
+    @include adaptiveClamp(padding-top, 67, 23);
+    @include adaptiveClamp(padding-bottom, 100, 57);
+    &__container {
+    }
+
+    &__title {
+        text-align: center;
+        @include adaptiveClamp(margin-bottom, 42, 14);
+        h2 {
+            color: $blueColor;
+            font-weight: 600;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        @include adaptiveClamp(font-size, 40, 15);
+        @include adaptiveClamp(line-height, 49, 18);
+        font-weight: 500;
+    }
+
+    &__list {
+        @include adaptiveClamp(margin-top, 100, 42);
+        @include adaptiveClamp(margin-bottom, 174, 57);
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 28, 10);
+    }
+
+    &__item {
+        position: relative;
+        @include adaptiveClamp(font-size, 30, 15);
+        @include adaptiveClamp(line-height, 36, 18);
+        @include adaptiveClamp(padding-left, 45, 15);
+        &::before {
+            position: absolute;
+            content: '';
+            @include adaptiveClamp(width, 19, 7);
+            @include adaptiveClamp(height, 19, 7);
+            background: linear-gradient(133.3deg, #292A74 0%, rgba(41, 42, 116, 0.28) 133.01%);
+            border-radius: 50%;
+            @include adaptiveClamp(top, 8, 5);
+            left: 0;
+        }
+    }
+
+    &__button-row {
+        @include adaptiveClamp(margin-top, 63, 20);
+    }
+
+    &__button {
+        margin: 0 auto;
+        @include adaptiveClamp(max-width, 355, 200);
+    }
+}
+.blue {
+}
