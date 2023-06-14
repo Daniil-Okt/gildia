@@ -34,6 +34,11 @@
     a {
       font-weight: 400;
       text-decoration: underline;
+      transition: all 0.3s ease  0s;
+      cursor: pointer;
+      &:hover {
+        color: $blueColor;
+      }
     }
   }
 
@@ -51,10 +56,16 @@
 
   &__phone {
     margin-bottom: rem(16);
+    
     @include adaptiveClamp(margin-bottom, 16, 8);
     a {
       @include adaptiveClamp(font-size, 25, 15);
       font-weight: 500;
+      transition: all 0.3s ease  0s;
+      cursor: pointer;
+      &:hover {
+        color: $blueColor;
+      }
     }
     @media(max-width:510px){
         text-align: center;
@@ -71,11 +82,15 @@
   }
 
   &__messenger {
+    position: relative;
     @include adaptiveClamp(max-width, 30, 21);
     width: 100%;
+    top: 0;
     img {
       width: 100%;
     }
+    cursor: pointer;
+    transition: all 0.3s ease  0s;
   }
 
   &__button-row {
@@ -106,6 +121,8 @@
   @include adaptiveClamp(padding, 22, 10);
   display: flex;
   align-items: center;
+
+  cursor: pointer;
   &__text {
     position: relative;
     @include adaptiveClamp(font-size, 20, 10);
