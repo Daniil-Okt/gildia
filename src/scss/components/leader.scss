@@ -1,0 +1,187 @@
+.leader {
+    position: relative;
+    @include adaptiveClamp(padding-bottom, 108, 29);
+    &::before {
+        position: absolute;
+        content: '';
+        @include adaptiveClamp(width, 145.5, 45.5);
+        @include adaptiveClamp(height, 147, 47);
+        background: url(@img/leader-fon1.png) no-repeat center center / contain;
+        bottom: rem(-35);
+        left: rem(-33);
+        z-index: -2;
+        
+        @media(max-width:690px){
+            display: none;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        @include adaptiveClamp(width, 266, 66);
+        @include adaptiveClamp(height, 379, 179);
+        background: url(@img/leader-fon2.png) no-repeat center center / contain;
+        bottom: rem(100);
+        right: rem(-50);
+        z-index: -2;
+        @media(max-width:690px){
+            display: none;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(53);
+    }
+
+    &__row {
+    }
+
+    &__application {
+    }
+}
+.row-leader {
+    display: flex;
+    max-width: rem(1180);
+    flex: 0 1 100%;
+    // @include adaptiveClamp(margin-right, 55, 19);
+    // @include adaptiveClamp(margin-left, 55, 19);
+    margin: 0 rem(-55);
+    @media(max-width:1200px){
+        margin: 0 rem(-35);
+    }
+    @media(max-width:920px){
+        margin: 0 rem(-17);
+    }
+
+    &__item {
+        // @include adaptiveClamp(padding-right, 55, 19);
+        // @include adaptiveClamp(padding-left, 55, 19);
+        padding: 0 rem(55);
+        width: 100%;
+        min-height: 100%;
+        @media(max-width:1200px){
+            padding: 0 rem(35);
+        }
+        @media(max-width:920px){
+            padding: 0 rem(17);
+        }
+    }
+
+    &__body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__img {
+        
+        img {
+            width: 100%;
+        }
+    }
+
+    &__button-row {
+        @include adaptiveClamp(margin-top, 55, 20);
+        margin-top: auto;
+        @media(max-width:620px){
+            display: none;
+        }
+    }
+
+    &__button {
+    }
+}
+.button {
+}
+.application-leader {
+    max-width: rem(1082);
+    background-color: #E7E7E7;
+    padding: rem(29) rem(21);
+    margin-top: rem(36);
+    @media(max-width:520px){
+        margin: rem(36) rem(-30) rem(0) rem(-30);
+        padding: rem(29) rem(30);
+    }
+    &__row {
+        display: flex;
+    }
+
+    &__button-row {
+        margin-right: rem(39);
+        @media(max-width:940px){
+            display: none;
+        }
+    }
+
+    &__button {
+        width: rem(49);
+        height: rem(44);
+        position: relative;
+        top: 0;
+        display: flex;
+        
+        justify-content: center;
+
+        background-color: $blueColor;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+        img {
+            width: 100%;
+            max-width: rem(30);
+        }
+        transition: all 0.3s ease  0s;
+        cursor: pointer;
+        &:hover {
+            top: rem(2);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &__text {
+        max-width: rem(910);
+        p {
+            @include adaptiveClamp(font-size, 30, 20);
+            @include adaptiveClamp(line-height, 36, 24);
+            // @media(max-width:440px){
+            //     max-width: rem(310);
+            // }
+        }
+        span {
+            font-weight: 600;
+            cursor: pointer;
+            &:hover {
+                color: #3a3b9d;
+            }
+        }
+        br {
+            @media(max-width:975px){
+                display: none;
+            }
+        }
+        
+    }
+    &__phone {
+        text-align: center;
+        min-width: 100%;
+        a {
+            @include adaptiveClamp(font-size, 34, 25);
+            font-weight: 500;
+            transition: all 0.3s ease  0s;
+
+            &:hover {
+                color: $blueColor;
+            }
+        }
+        @media(max-width:975px){
+            margin-top: rem(15);
+        }
+    }
+}

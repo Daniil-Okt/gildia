@@ -1,0 +1,110 @@
+.brands {
+    position: relative;
+    @include adaptiveClamp(padding-bottom, 100, 34);
+    &::before {
+        position: absolute;
+        content: '';
+        @include adaptiveClamp(width, 313, 160);
+        @include adaptiveClamp(height, 370, 185);
+        background: url(@img/brands-fon1.png) no-repeat center center / contain;
+        top:rem(480);
+        left: rem(-45);
+        z-index: -2;
+        @media(max-width:690px){
+            display: none;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        @include adaptiveClamp(width, 394, 100);
+        @include adaptiveClamp(height, 312, 182);
+        background: url(@img/brands-fon2.png) no-repeat center center / contain;
+        bottom: rem(-35);
+        right: rem(-40);
+        z-index: -2;
+        @media(max-width:690px){
+            display: none;
+        }
+    }
+    &__container {
+    }
+
+    &__title {
+        text-align: center;
+        @include adaptiveClamp(margin-bottom, 41, 17);
+    }
+
+    &__title-first {
+        @media(max-width:690px){
+            display: none;
+        }
+    }
+
+    &__title-end {
+        display: none;
+        @media(max-width:690px){
+            display: block;
+        }
+    }
+
+    &__row {
+        max-width: rem(1277);
+        margin: 0 auto;
+    }
+
+    &__item {
+    }
+}
+.item-brands {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    padding: rem(55) rem(30);
+    @media(max-width:690px){
+        padding: 0;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgb(242,243,247);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 100px 0px 0px;
+        filter: blur(2px);
+        z-index: -1;
+        top:0;
+        left: 0;
+        @media(max-width:690px){
+            display: none;
+        }
+    }
+
+    &:not(:last-child) {
+        @include adaptiveClamp(margin-bottom, 41, 15);
+    }
+    &__body {
+        display: flex;
+        align-items: center;
+        @media(max-width:690px){
+            flex-direction: column;
+        }
+    }
+
+    &__img {
+        @include adaptiveClamp(max-width, 220, 120);
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        margin: 0 rem(40) 0 rem(45);
+        @media(max-width:690px){
+            margin: rem(10) 0 0 0;
+        }
+    }
+}

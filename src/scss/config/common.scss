@@ -1,0 +1,63 @@
+// Заголовки, общие БЄМ блоки и проче...
+h2 {
+    @include adaptiveClamp(font-size, 55, 25);
+    @include adaptiveClamp(line-height, 67, 30);
+    font-weight: 500;
+}
+
+h2.bold {
+    font-weight: 700;
+    @media(max-width:720px){
+        font-weight: 600;
+    }
+}
+h3 {
+    @include adaptiveClamp(font-size, 25, 20);
+    @include adaptiveClamp(line-height, 30, 24);
+    font-weight: 600;
+}
+
+p {
+    @include adaptiveClamp(font-size, 20, 15);
+    @include adaptiveClamp(line-height, 24, 18);
+}
+
+span.blue {
+    color: #292A74;
+}
+
+.button {
+    position: relative;
+    width: 100%;
+    @include adaptiveClamp(padding, 28, 8);
+
+
+    text-align: center;
+    @include adaptiveClamp(font-size, 25, 20);
+    color: $whiteColor;
+
+    background: linear-gradient(94.97deg, #292A74 -7.09%, #A6A6C5 185.07%, #FFFFFF 386.8%);
+    border-radius: 100px;
+
+    cursor: pointer;
+    transition: all 0.3s ease  0s;
+    &::before {
+        position: absolute;
+        content: 'Заказать';
+        @include adaptiveClamp(padding, 28, 8);
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(94.97deg, #0D0FFB -7.09%, #A6A6C5 185.07%, #FFFFFF 386.8%);
+        border-radius: 100px;
+        top:0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.3s ease  0s;
+        z-index: 1;
+    }
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+}

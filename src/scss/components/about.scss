@@ -1,0 +1,82 @@
+.about {
+    position: relative;
+    @include adaptiveClamp(padding-top, 68, 29);
+    @include adaptiveClamp(padding-bottom, 186, 68);
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(562);
+        @include adaptiveClamp(width, 562, 373);
+        @include adaptiveClamp(height, 391, 260);
+        background: url(@img/about-fon1.png) no-repeat center center / contain;
+        @include adaptiveClamp(bottom, 100, 69);
+        @include adaptiveClamp(right, 203, 0);
+        z-index: -1;
+        transition: opacity 0.5s ease  0s;
+        @media(max-width:1550px){
+            transition: opacity 2s ease  0s;
+            opacity: 0.2;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        width: rem(562);
+        @include adaptiveClamp(width, 603, 373);
+        @include adaptiveClamp(height, 452, 260);
+        background: url(@img/about-fon2.png) no-repeat center center / contain;
+        @include adaptiveClamp(bottom, 196, 165);
+        right: 0;
+        z-index: -2;
+        transition: all 0.5s ease  0s;
+        @media(max-width:1550px){
+            opacity: 0;
+        }
+    }
+    &__container {
+    }
+
+    &__title {
+        h2 {
+            &:not(:last-child) {
+                @include adaptiveClamp(margin-bottom, 34, 19);
+            }
+        }
+    }
+
+    &__type {
+        @include adaptiveClamp(margin-top, 68, 29);
+        display: flex;
+        @include adaptiveClamp(gap, 76, 41);
+    }
+    &__item {
+        @include adaptiveClamp(font-size, 40, 20);
+    }
+
+    &__button-row {
+        @include adaptiveClamp(margin-top, 102, 47);
+        display: flex;
+        @media(max-width:480px){
+            justify-content: center;
+        }
+    }
+
+    &__button {
+        @include adaptiveClamp(max-width, 320, 211);
+        &::before {
+            content: 'Оформить заказ';
+        }
+    }
+}
+.blue {
+}
+.bold {
+}
+.type-about {
+
+    &__item {
+    }
+}
+.button {
+}
