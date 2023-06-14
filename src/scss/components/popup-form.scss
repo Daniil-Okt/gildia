@@ -1,0 +1,129 @@
+.popup-form {
+    background-color: #00000057;
+    
+    
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+}
+.form-popup {
+    position: relative;
+    min-width: 100%;
+    background-color: $whiteColor;
+    border-radius: 25px;
+    @include adaptiveClamp(padding, 66, 33);
+    @include adaptiveClamp(padding-top, 48, 27);
+    @include adaptiveClamp(padding-bottom, 80, 24);
+    & .open {
+        @include adaptiveClamp(padding-top, 360, 152);
+        @include adaptiveClamp(padding-bottom, 437, 170);
+    }
+    &__button-close {
+        position: absolute;
+        @include adaptiveClamp(top, 34, 12);
+        @include adaptiveClamp(right, 37, 13);
+        @include adaptiveClamp(width, 73, 27.5);
+        @include adaptiveClamp(height, 73, 27.5);
+        cursor: pointer;
+        img {
+            width: 100%;
+        }
+    }
+    &__title {
+        text-align: center;
+        
+        h2 {
+            color: #02025C;
+            font-weight: 600;
+        }
+        @include adaptiveClamp(margin-bottom, 92, 46);
+        .open & { 
+            display: none;
+        }
+    }
+    &__body {
+        
+    }
+
+    &__item {
+        &:not(:last-child) {
+            @include adaptiveClamp(margin-bottom, 39, 22);
+        }
+        .open & { 
+            display: none;
+        }
+    }
+
+    &__label {
+    }
+
+    &__label-name {
+    }
+
+    &__input {
+    }
+
+    &__input-name {
+    }
+
+    &__button-row {
+        @include adaptiveClamp(margin-top, 130, 32);
+        .open & { 
+            display: none;
+        }
+    }
+
+    &__button {
+        display: block;
+        @include adaptiveClamp(max-width, 571, 280);
+        @include adaptiveClamp(font-size, 30, 15);
+        @include adaptiveClamp(padding, 36, 18);
+        margin: 0 auto;
+        &::before {
+            @include adaptiveClamp(padding, 36, 18);
+            content: 'Оформить заказ';
+        }
+    }
+
+    &__text {
+        @include adaptiveClamp(margin-top, 39, 9);
+        text-align: center;
+        @include adaptiveClamp(font-size, 30, 10);
+        .open & { 
+            display: none;
+        }
+    }
+    &__thanks {
+        text-align: center;
+        display: none;
+        .open & {
+            display: block;
+        }
+        h2 {
+            color:  #0D0FFB;
+            font-weight: 600;
+            @include adaptiveClamp(font-size, 55, 25);
+        }
+    }
+}
+
+.text {
+}
+.form-record {
+
+    &__item {
+    }
+}
+.form-poup {
+
+    &__label-tel {
+    }
+}
+.tel {
+}
+.button {
+}

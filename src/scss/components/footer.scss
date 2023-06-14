@@ -99,7 +99,7 @@
   z-index: 5;
   background: #000000;
   border-radius: 0px 40px 0px 0px;
-  @include adaptiveClamp(max-width, 380, 207);
+  @include adaptiveClamp(max-width, 390, 215);
   @include adaptiveClamp(padding, 22, 10);
   display: flex;
   align-items: center;
@@ -120,6 +120,9 @@
         @media(max-width:500px){
           bottom: rem(-5);
         }
+    }
+    @media(max-width:1270px){
+        margin-right: rem(10);
     }
   }
 }
