@@ -87,6 +87,9 @@
   &__button {
     @include adaptiveClamp(font-size, 18, 18);
     padding: rem(16);
+    &::before {
+      padding: rem(16);
+    }
   }
 }
 .button {
