@@ -114,7 +114,7 @@
         content: '';
         @include adaptiveClamp(width, 27, 21);
         @include adaptiveClamp(height, 27, 21);
-        background: url(@img/assistant-messeg.svg) no-repeat center center / contain;
+        background: url(@img/assistant-messeg.png) no-repeat center center / contain;
         bottom: rem(-4);
         left: 0;
         @media(max-width:500px){
