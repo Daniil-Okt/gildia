@@ -1,27 +1,45 @@
 <?php 
+   $site = 'GILDIA';
+   $name = $_POST['name'];
+   $phone = $_POST['tel'];
+   //Отправка в Telegram
+  
+   $token = "6175032800:AAEjE6ZY2gFttQ6RC4peVyi7mou72IHciA4";
    
-    $site = 'SARP_GROUP';
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['tel'];
-    $comment = $_POST['comment'];
-    //Отправка в Telegram
-
-    $token = "6072434392:AAGk8D37swsdZnkkKnAC0lK5gzk6HQVcHkc";
-    $chat_id = "-971314841";
-    
-    $arr = array(
-        'Заявка с сайта: ' => $site,
-        'Имя пользователя: ' => $name,
-        'Телефон: ' => $phone,
-    );
-
-foreach($arr as $key => $value) {
-  $txt .= "<b>".$key."</b> ".$value."%0A";
-};
-
-$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
-
+   $chat_id = "-862719183";
+   
+  
+   // Формирование текста сообщения
+  $message = "Заявка с сайта: $site\n";
+  $message .= "Имя пользователя: $name\n";
+  $message .= "Телефон: $phone\n";
+  // Добавьте еще необходимые поля в сообщение, если нужно
+  
+  // Отправка запроса в Телеграм
+  $url = "https://api.telegram.org/bot$token/sendMessage";
+  $data = array(
+      'chat_id' => $chat_id,
+      'text' => $message
+  );
+  
+  $options = array(
+      'http' => array(
+          'method' => 'POST',
+          'header' => "Content-Type:application/x-www-form-urlencoded\r\n",
+          'content' => http_build_query($data)
+      )
+  );
+  
+  $context = stream_context_create($options);
+  $result = file_get_contents($url, false, $context);
+  
+  if ($result === false) {
+    // Обработка ошибки
+    echo "Ошибка при отправке заявки в Телеграм.";
+  } else {
+    // Успешная отправка
+    echo "Заявка успешно отправлена в Телеграм.";
+  }
 
 
 // Файлы phpmailer
@@ -30,7 +48,7 @@ require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
 // Формирование самого письма
-$title = "SARP_GROUP";
+$title = "GILDIA";
 $body = "
 <h2>Заявка с сайта</h2>
 <b>Имя:</b> $name<br>
@@ -47,10 +65,11 @@ try {
 
     $mail->Host       = 'smtp.mail.ru'; 
     $mail->Username   = 'web-prog-dn@mail.ru'; 
+    // 
     $mail->Password   = '6W1EU4RUb7ptcmCvtHCQ';
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('web-prog-dn@mail.ru', 'SARP_GROUP'); 
+    $mail->setFrom('web-prog-dn@mail.ru', 'GILDIA'); 
     // Получатель письма
     $mail->addAddress('danikoktysyk@gmail.com');  
 

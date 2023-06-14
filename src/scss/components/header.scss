@@ -137,7 +137,7 @@
         content: '';
         @include adaptiveClamp(width, 54, 20);
         @include adaptiveClamp(height, 54, 20);
-        background: url(../../images/menu-phone.svg) no-repeat center center / contain;
+        background: url(@img/menu-phone.svg) no-repeat center center / contain;
         bottom: 0;
         left: 0;
     }

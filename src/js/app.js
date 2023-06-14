@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (error === 0) {
       //   отправка полученных данных с формы в файл php
           fetch(url, {
-              // method: 'POST',
-              // body: formData
+              method: 'POST',
+              body: formData
           })
           .then(response => {
             if (response.ok) {
