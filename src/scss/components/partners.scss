@@ -43,6 +43,7 @@
     @include adaptiveClamp(width, 13, 7);
     @include adaptiveClamp(height, 13, 7);
 }
-// .swiper-pagination-bullet-active {
-//     background: #292A74;
-// }
+.swiper-pagination-bullet-active {
+    background: #292A74;
+    border: 1px solid #0D0FFB;
+}
