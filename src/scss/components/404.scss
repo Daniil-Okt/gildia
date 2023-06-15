@@ -1,0 +1,28 @@
+.mistake {
+    @include adaptiveClamp(padding-top, 208, 67);
+    @include adaptiveClamp(padding-bottom, 422, 151);
+    &__container {
+    }
+
+    &__title {
+        position: relative;
+        text-align: center;
+        max-width: rem(1000);
+        margin: 0 auto;
+        h2 {
+            color: #292A74;
+            font-weight: 700;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        left: 20%;
+        transform: translate(-65%);
+        top: 100%;
+        @include adaptiveClamp(width, 542, 138);
+        img {
+            width: 100%;
+        }
+    }
+}

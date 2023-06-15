@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Главная'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="page">
+        <div class="mistake">
+            <div class="mistake__container">
+                <div class="mistake__title">
+                    <h2>404</h2>
+                    <h2>Извините, такой страницы не существует</h2>
+                    <div class="mistake__img">
+                        <img src="@img/mistake-img.png" alt="">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </main>
+      @@include('html/footer.html', {})
+    </div>
+    @@include('html/script.html', {})
+  </body>
+</html> 
