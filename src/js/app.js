@@ -189,6 +189,7 @@ const swiperOption = new Swiper('.partners-swiper', {
   pagination: {
     el: ".swiper-pagination",
     dynamicBullets: true,
+    clickable: true,
   },
   breakpoints: {
     780: {
