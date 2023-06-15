@@ -22,7 +22,7 @@ import BurgerMenu from './modules/BurgerMenu';
 
 // import AOS from 'aos'
 
-// import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML
  ! (i) необходимо для корректного отображения webp из css
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
       }
   }
-  const inputFormRecord = formPopup.querySelectorAll('.form-record__input') 
+  const inputFormRecord = formPopup.querySelectorAll('.form-popup__input') 
   if (inputFormRecord.length > 0) {
     inputFormRecord.forEach(input => {
       input.addEventListener('input', function() {
@@ -174,3 +174,37 @@ function telTest(input) {
   return !/^[\d\+][\d\(\)\ -]{4,14}\d$/.test(input. value);
 }
 })
+
+const swiperOption = new Swiper('.partners-swiper', {
+  speed: 400,
+  spaceBetween: 25,
+  slidesPerView: 2,
+  modules: [Autoplay, Pagination],
+  autoplay: {
+    delay: 3000,
+    stopOnLastSlide: false,
+    disableOnIteration: false,
+  },
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+  },
+  breakpoints: {
+    780: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+      slideToClickedSlide: true,
+  },
+    1000: {
+      slidesPerView: 4,
+      spaceBetween: 25,
+      slideToClickedSlide: true,
+  },
+    1400: {
+        slidesPerView: 5,
+        spaceBetween: 25,
+        slideToClickedSlide: true,
+    }
+  },
+});
