@@ -64,14 +64,14 @@ try {
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
     $mail->Host       = 'smtp.mail.ru'; 
-    $mail->Username   = 'web-prog-dn@mail.ru'; 
+    $mail->Username   = 'hildiya-parts@mail.ru'; 
     // 
-    $mail->Password   = '6W1EU4RUb7ptcmCvtHCQ';
+    $mail->Password   = 'MenbdPfyC4H1xXse0zQa';
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('web-prog-dn@mail.ru', 'GILDIA'); 
+    $mail->setFrom('hildiya-parts@mail.ru', 'GILDIA'); 
     // Получатель письма
-    $mail->addAddress('danikoktysyk@gmail.com');  
+    $mail->addAddress('hildiya@hildiya.ru');  
 
 // Отправка сообщения
 $mail->isHTML(true);
